@@ -1,0 +1,7 @@
+ax\ha\tdd\chess\web\ChessApplicationTests.class
+ax\ha\tdd\chess\engine\BishopTest.class
+ax\ha\tdd\chess\engine\ChessboardTest.class
+ax\ha\tdd\chess\engine\PawnTest.class
+ax\ha\tdd\chess\web\console\ChessboardWriterTest.class
+ax\ha\tdd\chess\engine\CoordinatesTest.class
+ax\ha\tdd\chess\engine\RookTest.class
