@@ -41,7 +41,7 @@ public class Game {
         //! I'm aware that the code below dues not work but I imagine something like this would be the best way to do this
         // also the reason I make a new chess peace at the moment is that  board.getPiece actually just returns the set of coordinates that you give it
         // and for it to work better it should probably be changed to return the actual chess piece that is there
-        
+
         Coordinates cords_start = new Coordinates(split[0]);
         Coordinates cords_end = new Coordinates(split[1]);
 
