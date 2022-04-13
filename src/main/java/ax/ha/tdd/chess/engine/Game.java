@@ -1,5 +1,9 @@
 package ax.ha.tdd.chess.engine;
 
+import ax.ha.tdd.chess.engine.pieces.ChessPiece;
+import ax.ha.tdd.chess.engine.pieces.Pawn;
+import ax.ha.tdd.chess.engine.pieces.PieceType;
+
 public class Game {
 
     Chessboard board = Chessboard.startingBoard();
@@ -29,5 +33,18 @@ public class Game {
         //TODO this should trigger your move logic.
         isNewGame = false;
         System.out.println("Player tried to perform move: " + move);
+
+        //! when playing the game it should be able to figure out based on what chess piece type it is how it should move.
+        // and use the canMove() function of said class. but I have no idea how to make that work at the moment.
+
+        Coordinates cords = new Coordinates(move);
+        if(board.getPiece(cords).getPieceType() == PieceType.PAWN)
+        {
+            Pawn pawn = new Pawn(Player.WHITE,cords);
+            if(pawn.canMove() == true)
+            {
+
+            }
+        }
     }
 }
