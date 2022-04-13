@@ -1,8 +1,6 @@
 package ax.ha.tdd.chess.engine;
 
-import ax.ha.tdd.chess.engine.pieces.ChessPiece;
-import ax.ha.tdd.chess.engine.pieces.Pawn;
-import ax.ha.tdd.chess.engine.pieces.PieceType;
+import ax.ha.tdd.chess.engine.pieces.*;
 
 public class Game {
 
@@ -41,9 +39,12 @@ public class Game {
         String[] split = move.split(delimiter);
 
         //! I'm aware that the code below dues not work but I imagine something like this would be the best way to do this
-
+        // also the reason I make a new chess peace at the moment is that  board.getPiece actually just returns the set of coordinates that you give it
+        // and for it to work better it should probably be changed to return the actual chess piece that is there
+        
         Coordinates cords_start = new Coordinates(split[0]);
         Coordinates cords_end = new Coordinates(split[1]);
+
         if(board.getPiece(cords_start).getPieceType() == PieceType.PAWN)
         {
             Pawn pawn = new Pawn(Player.WHITE,cords_start);
@@ -52,5 +53,47 @@ public class Game {
                 pawn = new Pawn(Player.WHITE,cords_end);
             }
         }
+        if(board.getPiece(cords_start).getPieceType() == PieceType.ROOK)
+        {
+            Rook rook = new Rook(Player.WHITE,cords_start);
+            if(rook.canMove(board,cords_end) == true)
+            {
+                rook = new Rook(Player.WHITE,cords_end);
+            }
+        }
+        if(board.getPiece(cords_start).getPieceType() == PieceType.BISHOP)
+        {
+            Bishop bishop = new Bishop(Player.WHITE,cords_start);
+            if(bishop.canMove(board,cords_end) == true)
+            {
+                bishop = new Bishop(Player.WHITE,cords_end);
+            }
+        }
+        if(board.getPiece(cords_start).getPieceType() == PieceType.KNIGHT)
+        {
+            Knight knight = new Knight(Player.WHITE,cords_start);
+            if(knight.canMove(board,cords_end) == true)
+            {
+                knight = new Knight(Player.WHITE,cords_end);
+            }
+        }
+        if(board.getPiece(cords_start).getPieceType() == PieceType.QUEEN)
+        {
+            Queen queen = new Queen(Player.WHITE,cords_start);
+            if(queen.canMove(board,cords_end) == true)
+            {
+                queen = new Queen(Player.WHITE,cords_end);
+            }
+        }
+        if(board.getPiece(cords_start).getPieceType() == PieceType.KING)
+        {
+            King king = new King(Player.WHITE,cords_start);
+            if(king.canMove(board,cords_end) == true)
+            {
+                king = new King(Player.WHITE,cords_end);
+            }
+        }
+
+
     }
 }
