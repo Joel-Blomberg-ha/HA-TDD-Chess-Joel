@@ -4,7 +4,7 @@ import ax.ha.tdd.chess.engine.pieces.Knight;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.*;
+
 
 public class KnightTest {
 
