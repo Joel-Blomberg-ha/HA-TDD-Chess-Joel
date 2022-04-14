@@ -2,9 +2,10 @@ package ax.ha.tdd.chess.engine;
 
 import ax.ha.tdd.chess.engine.pieces.Queen;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.mock;
+
 
 public class QueenTest {
 
@@ -51,21 +52,21 @@ public class QueenTest {
     @Test
     public void Q_rook_blocked_FALSE() {
 
-        Chessboard mock = mock(Chessboard.class);
+        Chessboard chessboard = new Chessboard();
 
-        mock.addPiece(new Queen(Player.WHITE, new Coordinates(4, 4)));
+        chessboard.addPiece(new Queen(Player.WHITE, new Coordinates(4, 4)));
 
-        Assertions.assertFalse(new Queen(Player.BLACK, new Coordinates(4, 1)).canMove(mock, new Coordinates(4, 6)));
+        Assertions.assertFalse(new Queen(Player.BLACK, new Coordinates(4, 1)).canMove(chessboard, new Coordinates(4, 6)));
 
     }
 
     @Test
     public void Q_rook_eat_rook() {
-        Chessboard mock = mock(Chessboard.class);
+        Chessboard chessboard = new Chessboard();
 
-        mock.addPiece(new Queen(Player.WHITE, new Coordinates(4, 4)));
+        chessboard.addPiece(new Queen(Player.WHITE, new Coordinates(4, 4)));
 
-        Assertions.assertTrue(new Queen(Player.BLACK, new Coordinates(4, 1)).canMove(mock, new Coordinates(4, 4)));
+        Assertions.assertTrue(new Queen(Player.BLACK, new Coordinates(4, 1)).canMove(chessboard, new Coordinates(4, 4)));
 
     }
 

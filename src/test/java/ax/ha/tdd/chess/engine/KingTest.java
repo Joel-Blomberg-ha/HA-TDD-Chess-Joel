@@ -4,7 +4,7 @@ import ax.ha.tdd.chess.engine.pieces.King;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.*;
+
 
 public class KingTest {
 

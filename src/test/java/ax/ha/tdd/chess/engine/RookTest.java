@@ -4,8 +4,6 @@ import ax.ha.tdd.chess.engine.pieces.Rook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.mock;
-
 public class RookTest {
 
     @Test
@@ -56,21 +54,21 @@ public class RookTest {
     @Test
     public void rook_blocked_FALSE(){
 
-        Chessboard mock = mock(Chessboard.class);
+        Chessboard chessboard = new Chessboard();
 
-        mock.addPiece(new Rook(Player.WHITE,new Coordinates(4,4)));
+        chessboard.addPiece(new Rook(Player.WHITE,new Coordinates(4,4)));
 
-        Assertions.assertFalse(new Rook(Player.BLACK, new Coordinates(4, 1)).canMove(mock, new Coordinates(4,6)));
+        Assertions.assertFalse(new Rook(Player.BLACK, new Coordinates(4, 1)).canMove(chessboard, new Coordinates(4,6)));
 
     }
 
     @Test
     public void rook_eat_rook(){
-        Chessboard mock = mock(Chessboard.class);
+        Chessboard chessboard = new Chessboard();
 
-        mock.addPiece(new Rook(Player.WHITE,new Coordinates(4,4)));
+        chessboard.addPiece(new Rook(Player.WHITE,new Coordinates(4,4)));
 
-        Assertions.assertTrue(new Rook(Player.BLACK,new Coordinates(4,1)).canMove(mock,new Coordinates(4,4)));
+        Assertions.assertTrue(new Rook(Player.BLACK,new Coordinates(4,1)).canMove(chessboard,new Coordinates(4,4)));
 
 
     }

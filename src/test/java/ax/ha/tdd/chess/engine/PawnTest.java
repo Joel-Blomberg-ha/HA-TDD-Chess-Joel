@@ -4,7 +4,6 @@ import ax.ha.tdd.chess.engine.pieces.Pawn;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.*;
 
 public class PawnTest {
 
@@ -51,9 +50,9 @@ public class PawnTest {
     @Test
     public void pawn_eat_pawn()
     {
-        Chessboard mock = mock(Chessboard.class);
-        mock.addPiece(new Pawn(Player.WHITE,new Coordinates(4,4)));
-        Assertions.assertTrue(new Pawn(Player.BLACK,new Coordinates(3,3)).canMove(mock,new Coordinates(4,4)));
+        Chessboard chessboard = new Chessboard();
+        chessboard.addPiece(new Pawn(Player.WHITE,new Coordinates(4,4)));
+        Assertions.assertTrue(new Pawn(Player.BLACK,new Coordinates(3,3)).canMove(chessboard,new Coordinates(4,4)));
     }
 
 
